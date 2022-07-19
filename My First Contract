@@ -1,0 +1,40 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.15;
+
+contract heist {
+
+    string gray;
+
+    takeover[] public took;
+
+    struct takeover {
+        string firstname;
+        string lastname;
+        string age;
+        string height;
+        string west;
+    }
+
+    function tab(string memory _firstname, string memory _lastname, string memory _age, 
+    string memory _height, string memory _west) public {
+      took.push(takeover(_firstname, _lastname, _age, _height, _west));
+    }
+
+    function you () public view returns (uint) {
+    return took.length;
+    }
+
+    function yess (uint erase) public {
+        delete took[erase];
+    }
+
+    constructor (string memory _gray) {
+        gray = _gray;
+    }
+
+    function done() public view returns (address) {
+        address base;
+        return base= msg.sender;
+    }
+}
